@@ -1,0 +1,118 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 2px;
+            text-align: left;
+        }
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <title>Contact List App</title>
+</head>
+<body>
+<div class="container" ng-controller="AppCtrl">
+    <h1>Education</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+        </tr>
+        <tr>
+            <td>LACC</td>
+            <td>Community College</td>
+            <td>edu</td>
+        </tr>
+        <tr>
+            <td>CSULA</td>
+            <td>University</td>
+            <td>edu</td>
+        </tr>
+    </table>
+
+    <h1>Skills</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+        </tr>
+        <tr>
+            <td>Dilligence</td>
+            <td>Working Hard</td>
+            <td>skill</td>
+        </tr>
+        <tr>
+            <td>Programmer</td>
+            <td>C#</td>
+            <td>skill</td>
+        </tr>
+    </table>
+
+    <h1>Projects</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+        </tr>
+        <tr>
+            <td>Nothing</td>
+            <td>Accomplished</td>
+            <td>project</td>
+        </tr>
+    </table>
+
+    <h1> </h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Action</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input class="form-control" ng-model="contact.name"></td>
+            <td><input class="form-control" ng-model="contact.description"></td>
+            <td><input class="form-control" ng-model="contact.type"></td>
+            <td><button class="btn btn-primary" ng-click="addContact()">Add </button></td>
+            <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="contact in hw3db">
+            <td>{{contact.name}}</td>
+            <td>{{contact.description}}</td>
+            <td>{{contact.type}}</td>
+            <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+            <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>

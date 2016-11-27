@@ -1,0 +1,17 @@
+{
+  "name": "day10.26.2016",
+  "description": "Just Practicing",
+  "main": "server.js",
+  "authors": [
+    "Robert Karapet"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
